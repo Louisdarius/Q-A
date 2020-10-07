@@ -1,0 +1,11 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>Question form</h1>
+<p>Please fill in the form to create a question</p>
+<form action="/questions" method="POST">
+    <input type="text" placeholder="Enter your question" name="title"> <br>
+    <input type="text" placeholder="Description" name="description">
+<button type="submit">Go</button>
+</form>
+
+<%- include('../partials/footer.ejs') %>
