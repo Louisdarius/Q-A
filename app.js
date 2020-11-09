@@ -1,8 +1,10 @@
- require('dotenv').config();
- var   express           = require('express'),
+require('dotenv').config();
+
+ const express           = require('express'),
        app               = express(),
        ejs               = require('ejs'),
        bodyParser        = require('body-parser'),
+       methodOverride    = require('method-override'),
        mongoose          = require('mongoose'),     
        Question          = require('./models/question');
 
@@ -16,12 +18,13 @@
        // Utilities                     
        app.use(bodyParser.urlencoded({extended: true}));
        app.use(express.static(__dirname + "/public"));
+       app.use(methodOverride('_method'));
 
        // Connect to Local Database
        mongoose.connect("mongodb://localhost/stackOverflow");
 
       app.use('/', indexRoutes);
-      app.use('/question', questionRoutes);
+      app.use('/questions', questionRoutes);
 
 
       app.listen(process.env.PORT, ()=>{

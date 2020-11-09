@@ -1,0 +1,7 @@
+<h2>This page shows a specific question</h2>
+<h5> <%= question.title %> </h5>
+<p> <%= question.description %></p>
+<button><a href="/questions/<%=question.id%>/edit">Edit</a> </button>
+<form action="<%= question.id%>?_method=DELETE" method="POST">
+    <button>Delete</button> 
+</form>

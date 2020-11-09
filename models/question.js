@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 
 // For testing purpose. To be remodeled
 
-const questionSchema = new Schema({
+const QuestionSchema = new Schema({
     title: String,
     description: String
 });
 
-module.exports =  mongoose.model('Question', questionSchema);
+module.exports =  mongoose.model('Question', QuestionSchema);
 
